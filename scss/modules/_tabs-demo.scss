@@ -17,7 +17,7 @@
 				font-size: 1.8rem;
 				color: $brownDark;
 				text-decoration: none;
-				transition: transform $speed3 $defaultEase;
+				//transition: transform $speed3 $defaultEase;
 				
 				&:last-child{
 					margin-right: 0;
@@ -25,6 +25,10 @@
 				
 				&.active{
 					color: $greenLight;
+				}
+				
+				span{
+					display: inline-block;
 				}
 			}
 			@media (min-width: $mobile-phone){
@@ -37,13 +41,108 @@
 				}
 			}
 		}
+		
+		$radius: 1rem;
+		$borderCol: $greyLight;
+		
 		&.horizontal{
 			@media (min-width: $mobile-phone){
 				.tabs-nav{
+					margin-bottom: 0;
+					position: relative;
+					z-index: 10;
+					
 					.tabs-nav-item{
-						&.active{
-							transform: translateY(1rem);
+						padding: .5rem 1rem;
+						background: $white;
+						border: .1rem solid $borderCol;
+						border-bottom: 0;
+						border-radius: $radius $radius 0 0;
+						position: relative;
+						
+						&:after{
+							content: '';
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							height: .2rem;
+							background-image: linear-gradient(transparent , rgba($greyLight, .7));
 						}
+						
+						&.active{
+							transform: translateY(.1rem);
+							span{
+								transform: translateY(-.1rem);
+							}
+							
+							&:after{
+								display: none;
+							}
+						}
+					}
+				}
+				.tabs-cont{
+					display: block;
+					position: relative;
+					z-index: 1;
+					border: .1rem solid $borderCol;
+					border-radius: 0 0 $radius $radius;
+					margin-bottom: 2rem;
+					
+					.tab{
+						padding: 2rem 1rem;
+					}
+				}
+			}
+		}
+		&.vertical{
+			@media (min-width: $mobile-phone){
+				.tabs-nav{
+					margin-bottom: 0;
+					position: relative;
+					z-index: 10;
+					
+					.tabs-nav-item{
+						padding: .5rem 1rem;
+						margin-bottom: 1rem;
+						background: $white;
+						border: .1rem solid $borderCol;
+						border-right: 0;
+						border-radius: $radius 0 0 $radius;
+						position: relative;
+						
+						&:after{
+							content: '';
+							position: absolute;
+							right: 0;
+							top: 0;
+							width: .2rem;
+							height: 100%;
+							background-image: linear-gradient(to right, transparent , rgba($greyLight, .7));
+						}
+						
+						&.active{
+							transform: translateX(.1rem);
+							span{
+								transform: translateX(-.1rem);
+							}
+							
+							&:after{
+								display: none;
+							}
+						}
+					}
+				}
+				.tabs-cont{
+					display: block;
+					position: relative;
+					z-index: 1;
+					border: .1rem solid $borderCol;
+					border-radius: 0 $radius $radius $radius;
+					
+					.tab{
+						padding: 1rem 2rem;
 					}
 				}
 			}

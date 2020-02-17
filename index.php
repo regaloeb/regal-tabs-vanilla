@@ -131,13 +131,13 @@ if(elt.tab){<br>
 					<div class="tabs vertical" data-default="0"> <!-- class horizontal/vertical, data-default=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
 							<a href="#pages" class="tabs-nav-item">
-								Onglet 1
+								<span>Onglet 1</span>
 							</a>
 							<a href="#events" class="tabs-nav-item">
-								Onglet 2
+								<span>Onglet 2</span>
 							</a>
 							<a href="#docs" class="tabs-nav-item">
-								Onglet3
+								<span>Onglet3</span>
 							</a>
 						</nav>
 						<div class="tabs-cont">
@@ -188,13 +188,13 @@ if(elt.tab){<br>
 					<div class="tabs horizontal" data-default="0"> <!-- class horizontal/vertical, data-default=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
 							<a href="#pages-1" class="tabs-nav-item" id="nav-tab1-1">
-								Onglet 1
+								<span>Onglet 1</span>
 							</a>
 							<a href="#events-1" class="tabs-nav-item" id="nav-tab2-1">
-								Onglet 2
+								<span>Onglet 2</span>
 							</a>
 							<a href="#docs-1" class="tabs-nav-item" id="nav-tab3-1">
-								Onglet 3
+								<span>Onglet 3</span>
 							</a>
 						</nav>
 						<div class="tabs-cont">

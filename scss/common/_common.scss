@@ -80,7 +80,11 @@ a{
 .page-content{
 	transition: transform $speed2 $defaultEase;
 	position: relative;
+	padding: 0 1rem;
 	
+	@media (min-width: 810px){
+		padding: 0;
+	}
 	
 	&.mobile-nav-active{
 		transform: translateX(100%);
