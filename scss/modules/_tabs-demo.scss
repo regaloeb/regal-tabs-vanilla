@@ -1,0 +1,57 @@
+.tabs-demo{
+	padding: 0 1rem;
+	font-family: $regularFont;
+	
+	@media (min-width: 1210px){
+		padding: 0;
+	}
+	
+	h2{
+		margin-bottom: 2rem;
+	}
+	
+	.tabs{
+		.tabs-nav{
+			.tabs-nav-item{
+				font-family: $regularFont;
+				font-size: 1.8rem;
+				color: $brownDark;
+				text-decoration: none;
+				transition: transform $speed3 $defaultEase;
+				
+				&:last-child{
+					margin-right: 0;
+				}
+				
+				&.active{
+					color: $greenLight;
+				}
+			}
+			@media (min-width: $mobile-phone){
+				.tabs-nav-item{
+					margin-right: 0;
+					&.active{
+						color: $greenLight;
+						transform: translateX(1rem);
+					}
+				}
+			}
+		}
+		&.horizontal{
+			@media (min-width: $mobile-phone){
+				.tabs-nav{
+					.tabs-nav-item{
+						&.active{
+							transform: translateY(1rem);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.tab{
+		width: 100%;
+	}
+	
+}
