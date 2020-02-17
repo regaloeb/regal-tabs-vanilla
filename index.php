@@ -15,16 +15,16 @@
 		<link rel="icon" type="image/png" href="favicon.png">
 		<link href="css/styles.css" rel="stylesheet" type="text/css">
 		
-		<meta property="og:url" content="http://www.regaloeb.com/pages/regalTabs">
+		<meta property="og:url" content="http://www.regaloeb.com/pages/regal-tabs-vanilla">
 		<meta property="og:title" content="RegalTabs">
 		<meta property="og:description" content="Un constructeur Javascript Vanilla pour présentation en mode onglets.">
-		<meta property="og:image" content="http://www.regaloeb.com/pages/regalTabs/fb-thumb.png">
+		<meta property="og:image" content="http://www.regaloeb.com/pages/regal-tabs-vanilla/fb-thumb.png">
 		<meta property="og:site_name" content="regaloeb.com">
 		<meta property="og:type" content="website">
 		<meta property="fb:admins" content="595624305">
 		<meta property="fb:app_id" content="217293022051519">
 		
-		<link rel="canonical" href="http://www.regaloeb.com/pages/regalTabs">
+		<link rel="canonical" href="http://www.regaloeb.com/pages/regal-tabs-vanilla">
 	</head>
 	<body>
 		<main class="page-content">
