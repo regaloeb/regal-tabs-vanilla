@@ -83,8 +83,9 @@
 				<p>
 					La CSS de base ne contient que le positionnement des blocs en mode horizontal/vertical et mobile/desktop.<br>
 					L'habillage graphique sera à ajouter pour chaque cas.<br>
-					<a href="scss/components/_tabs.scss" download>scss/components/_tabs.scss</a><br>
-					<a href="css/tabs.css" download>css/tabs.css</a>
+					SCSS: <a href="scss/components/_tabs.scss" download>scss/components/_tabs.scss</a><br>
+					CSS: <a href="css/tabs.css" target="_blank">css/tabs.css</a><br>
+					HABILLAGE DE BASE CSS: <a href="css/tabs-habillage.css" target="_blank">css/tabs-habillage.css</a>
 				</p>
 				
 				<h2>JAVASCRIPT</h2>
