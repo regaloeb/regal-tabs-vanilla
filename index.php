@@ -32,7 +32,8 @@
 			<div class="section-inner">
 				<h1>RegalTabs</h1>
 				<p>
-					La présentation de contenu par onglets revient régulièrement alors voici un petit constructeur Javascript Vanilla qui permet de la générer facilement. 
+					La présentation de contenu par onglets revient régulièrement alors voici un petit constructeur Javascript Vanilla qui permet de la générer facilement.<br><br>
+					<a href="https://github.com/regaloeb/regal-tabs-vanilla" target="_blank">Github repository</a>
 				</p>
 				<h2>HTML</h2>
 				<p>
