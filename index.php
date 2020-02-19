@@ -42,38 +42,38 @@
 					Attribut <strong>data-active</strong> détermine l'onglet affiché par défaut&nbsp;: "0": le premier, "1": le deuxième, etc.<br>
 					Avec la classe <strong>.vertical</strong> la navigation sera placée à gauche des onglets, les liens les uns en dessous des autres..<br>
 					Avec la classe <strong>.horizontal</strong> la navigation sera placée au dessus des onglets, les liens les uns à côté des autres..<br>
-					Pour les mobiles, la navigation est toujours au dessus des onglets et les liens sont placés les uns sous les autres.
+					Pour les mobiles, la navigation est toujours au dessus des onglets et les liens sont placés les uns sous les autres.<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Un enfant avec classe <strong>.tabs-nav</strong>.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque enfant de ce bloc .tabs-nav est un lien vers un onglet et doit avoir la classe <strong>.tabs-nav-item</strong>.&nbsp;:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque enfant de ce bloc .tabs-nav est un lien vers un onglet et doit avoir la classe <strong>.tabs-nav-item</strong>.<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Un enfant avec classe <strong>.tabs-cont</strong> qui va contenir les onglets.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque onglet doit avoir la classe <strong>.tab</strong>.
-					<div class="code">
-&lt;div class="tabs vertical" data-active="0"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tabs-nav"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="<strong>#onglet1</strong>" class="tabs-nav-item"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Onglet 1<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#onglet2" class="tabs-nav-item"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Onglet 2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tabs-cont"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="<strong>onglet-1</strong>" class="tab"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ne inani labitur est....<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="onglet-2" class="tab"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sea cu inimicus salutandi...<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br>
-&lt;/div><br>
-					</div>
-					L'attribut <strong>href</strong> des <strong>.tabs-nav-item</strong> doit contenir un lien vers l'onglet correspondant sous forme d'ancre. Il permet au javascript de retrouver l'onglet et aux utilisateurs non-javascript d'aller vers l'onglet directement.<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque onglet doit avoir la classe <strong>.tab</strong>.<br>
+					<span class="code">
+&lt;div class="tabs vertical" data-active="0">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tabs-nav">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="<strong>#onglet1</strong>" class="tabs-nav-item">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Onglet 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#onglet2" class="tabs-nav-item">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Onglet 2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tabs-cont">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="<strong>onglet-1</strong>" class="tab">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ne inani labitur est....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="onglet-2" class="tab">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sea cu inimicus salutandi...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&lt;/div>
+					</span>
+					L'attribut <strong>href</strong> des <strong>.tabs-nav-item</strong> doit contenir un lien vers l'onglet correspondant sous forme d'ancre. Il permet au javascript de retrouver l'onglet et aux utilisateurs non-javascript d'aller vers l'onglet directement.<br>
 					Comme la navigation contenant les titres des onglets est dans un bloc séparé des onglets, pour des raisons d'accessibilité, on place des balise <strong>&lt;hN class="hide"></strong> dans les onglets.
 					<span class="code">
 .hide{	position: absolute;	left: -100000px; top: -10000px;}
@@ -97,14 +97,14 @@
 					</span>
 					Déclarer les objets&nbsp;:
 					<span class="code">
-var tabs = document.querySelectorAll('.tabs');<br>
-if(tabs){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;tabs.forEach(function(elt){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!elt.tab){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab</strong> = new RegalTabs(elt);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-}<br>
+var tabs = document.querySelectorAll('.tabs');
+if(tabs){
+&nbsp;&nbsp;&nbsp;&nbsp;tabs.forEach(function(elt){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!elt.tab){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab</strong> = new RegalTabs(elt);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+}
 					</span>
 					On stocke l'objet RegalTab dans l'élément HTML (<strong>elt.tab</strong>) de façon à pouvoir facilement faire appel aux méthodes publiques du constructeur.
 				</p>
@@ -112,16 +112,16 @@ if(tabs){<br>
 				<p>
 					Pour détruire l'objet&nbsp;:
 					<span class="code">
-if(elt.tab){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab.destroy();</strong><br>
-&nbsp;&nbsp;&nbsp;&nbsp;elt.tab = false;<br>
-}<br>
+if(elt.tab){
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab.destroy();</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;elt.tab = false;
+}
 					</span>
 					Pour updater la hauteur du bloc si jamais son contenu change&nbsp;:
 					<span class="code">
-if(elt.tab){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab.resize();</strong><br>
-}<br>
+if(elt.tab){
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab.resize();</strong>
+}
 					</span>
 					<a href="js/regal-tabs-vanilla.js" download>js/regal-tabs-vanilla.js</a>
 				</p>
