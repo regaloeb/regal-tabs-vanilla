@@ -36,6 +36,13 @@ var RegalTabs = function(selector, options){
 	var tab = elt.querySelectorAll('.tab');
 	var activetab;
 	
+	//une ancre prend le dessus sur le js default
+	var reqId = window.document.location.hash.replace('#', '');
+	var reqEl = (reqId !== '') ? document.getElementById(reqId) : false;
+	if(reqEl){
+		//make sure reqEl is inside the RegalTabs
+		reqEl = elt.contains(document.getElementById(reqId)) ? document.getElementById(reqId) : false;
+	}
 	//open-close action
 	nav.forEach(function(el, index){
 		el.index = index;
@@ -60,7 +67,7 @@ var RegalTabs = function(selector, options){
 			else{
 				elem.classList.add('active');
 				activetab = elem;
-				resize();
+				resize(); 
 			}
 		});
 	}
@@ -83,8 +90,11 @@ var RegalTabs = function(selector, options){
 	var defaultNav = nav[plugin.o.active];
 	//activetab = tab[plugin.o.active];
 	function defaultState(){
+		if(reqEl){ 
+			defaultNav = document.getElementById(reqId + '-nav');
+		}
 		triggerEvent(defaultNav, 'click');
-	}
+	};
 	defaultState();
 	
 	function windowLoad(){
@@ -92,17 +102,17 @@ var RegalTabs = function(selector, options){
 			//to make sure everything is loaded, especially images
 			defaultState();
 		}, 500);
-	}
+	};
 	
 	function resize(){
 		var h = parseFloat(getComputedStyle(activetab, null).height);
 		tabsCont.style.minHeight = h + 'px';
-	}
+	};
 	
 	//public
 	plugin.resize = function(){
 		resize();
-	}
+	};
 	
 	plugin.destroy = function(){
 		nav.forEach(function(el){
@@ -115,7 +125,7 @@ var RegalTabs = function(selector, options){
 		window.removeEventListener('resizeEnd', resize);
 		window.removeEventListener('load', windowLoad);
 		tabsCont.style.minHeight = '0px';
-	}
+	};
 	
 	//eventListeners
 	//wait until resize is done
@@ -129,4 +139,4 @@ var RegalTabs = function(selector, options){
 	window.addEventListener('resizeEnd', resize);
 	
 	return plugin;
-}
+};

@@ -48,9 +48,9 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;Un enfant avec classe <strong>.tabs-cont</strong> qui va contenir les onglets.<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque onglet doit avoir la classe <strong>.tab</strong>.<br>
 					<span class="code">
-&lt;div class="tabs vertical" data-active="0">
+&lt;div class="tabs vertical" <strong>data-active="0"</strong>>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tabs-nav">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="<strong>#onglet1</strong>" class="tabs-nav-item">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a <strong>href="#onglet1" class="tabs-nav-item"</strong>>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Onglet 1
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#onglet2" class="tabs-nav-item">
@@ -58,14 +58,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tabs-cont">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="<strong>onglet-1</strong>" class="tab">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div <strong>id="onglet-1" class="tab"</strong>>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 class="hide">Onglet 1&lt;/h3>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ne inani labitur est....
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="onglet-2" class="tab">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;h3 class="hide">Onglet 1&lt;/h3></strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 class="hide">Onglet 1&lt;/h3>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sea cu inimicus salutandi...
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/p>
@@ -123,6 +123,28 @@ if(elt.tab){
 &nbsp;&nbsp;&nbsp;&nbsp;<strong>elt.tab.resize();</strong>
 }
 					</span>
+					<h2>Forcer ouverture d'un onglet avec une ancre dans l'URL</h2>
+					<p>
+						On peut aussi forcer l'ouverture d'un volet en passant une ancre dans l'URL.<br>
+						Il faut pour cela bien relier les éléments de navigation avec les éléments de contenus via leurs attributs ID&nbsp;:<br>
+						<span class="code">
+&lt;div class="tabs vertical" data-active="0">
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tabs-nav">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#onglet1" class="tabs-nav-item" <strong>id="onglet1-nav"</strong>>Onglet 1&lt;/a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#onglet2" class="tabs-nav-item" <strong>id="onglet2-nav"</strong>>Onglet 2&lt;/a>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="tabs-cont">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div <strong>id="onglet-1"</strong> class="tab">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div <strong>id="onglet-2"</strong> class="tab">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div>
+&lt;/div>						
+						</span>
+						Si l'élément <strong>.tabs-cont</strong> de l'objet RegalTabs contient un élément avec un identifiant identique à l'ancre, l'onglet correspondant est ouvert. Cette action prend le dessus sur l'onglet ouvert par défaut via l'attribut <strong>data-active</strong>.
+					</p>
 					<a href="js/regal-tabs-vanilla.js" download>js/regal-tabs-vanilla.js</a>
 				</p>
 			</div>
@@ -130,15 +152,15 @@ if(elt.tab){
 			<section class="section tabs-demo">
 				<div class="section-inner">
 					<h2>Démo en mode vertical</h2>
-					<div class="tabs vertical" data-default="0"> <!-- class horizontal/vertical, data-default=indice onglet actif par défaut -->
+					<div class="tabs vertical" data-active="0"> <!-- class horizontal/vertical, data-active=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
-							<a href="#pages" class="tabs-nav-item">
+							<a href="#pages" class="tabs-nav-item" id="pages-nav">
 								<span>Onglet 1</span>
 							</a>
-							<a href="#events" class="tabs-nav-item">
+							<a href="#events" class="tabs-nav-item" id="events-nav">
 								<span>Onglet 2</span>
 							</a>
-							<a href="#docs" class="tabs-nav-item">
+							<a href="#docs" class="tabs-nav-item" id="docs-nav">
 								<span>Onglet3</span>
 							</a>
 						</nav>
@@ -189,18 +211,18 @@ if(elt.tab){
 				<h2>Démo en mode horizontal</h2>
 					<div class="tabs horizontal" data-default="0"> <!-- class horizontal/vertical, data-default=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
-							<a href="#pages-1" class="tabs-nav-item" id="nav-tab1-1">
+							<a href="#onglet-1" class="tabs-nav-item" id="onglet-1-nav">
 								<span>Onglet 1</span>
 							</a>
-							<a href="#events-1" class="tabs-nav-item" id="nav-tab2-1">
+							<a href="#onglet-2" class="tabs-nav-item" id="onglet-2-nav">
 								<span>Onglet 2</span>
 							</a>
-							<a href="#docs-1" class="tabs-nav-item" id="nav-tab3-1">
+							<a href="#onglet-3" class="tabs-nav-item" id="onglet-3-nav">
 								<span>Onglet 3</span>
 							</a>
 						</nav>
 						<div class="tabs-cont">
-							<div id="pages-1" class="tab">
+							<div id="onglet-1" class="tab">
 								<h3 class="hide">Onglet 1</h3>
 								<p>
 									Has graecis dolores an, natum suavitate incorrupte id eos. Duo modus consulatu hendrerit no, vix nisl aliquid commune in, est ut minim movet. Id nec ceteros fastidii invidunt. Illum integre consectetuer cu vix, eu tollit dicant delenit quo, id viderer imperdiet evertitur vix. Enim tollit numquam pri no, ex pri accumsan periculis, eum brute aeque verear ei.
@@ -212,7 +234,7 @@ if(elt.tab){
 									Cum te stet corpora epicurei. Quo aperiam iuvaret an. Nam wisi voluptaria voluptatum in, epicuri quaestio iracundia ad qui. Eu oratio pertinax sed, ea ignota habemus cum. Ea vix assum adolescens, sit no tation pertinax argumentum.
 								</p>
 							</div>
-							<div id="events-1" class="tab">
+							<div id="onglet-2" class="tab">
 								<h3 class="hide">Onglet 2</h3>
 								
 								<p>
@@ -225,7 +247,7 @@ if(elt.tab){
 									Duo eu tantas dolores cotidieque, ne duo quod facilisi intellegat. Ex has prima mandamus dissentias, ullum prompta iuvaret cu eos, nonumes cotidieque eos ne. Sea ad nobis partem putent, ea aliquid imperdiet mea. Mea vocent scribentur cu, cum iuvaret accusamus ex, quo in habeo alienum. Sonet ridens cu mea.
 								</p>
 							</div>
-							<div id="docs-1" class="tab">
+							<div id="onglet-3" class="tab">
 								<h3 class="hide">Onglet 3</h3>
 								
 								<p>
@@ -252,21 +274,6 @@ if(elt.tab){
 						elt.tab = new RegalTabs(elt);
 					}
 				});
-				
-				//close playing videos when opening or closing a tab
-				var openCloz = document.querySelectorAll('.tabs-nav-item');
-				if(openCloz.length){
-					openCloz.forEach(function(el){
-						el.addEventListener('click', function(e){
-							if(isMobileContext){
-								var videoplaying = document.querySelector('.videoplaying');
-								if(videoplaying){
-									triggerEvent(videoplaying.querySelector('.close'), 'click');
-								}
-							}
-						});
-					});
-				}
 			}
 		</script>
 	</body>

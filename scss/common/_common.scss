@@ -63,7 +63,6 @@ h1{
 	}
 }
 
-
 h2{
 	text-transform: uppercase;
 	font-family: $titleFont;
@@ -208,23 +207,6 @@ a{
 
 .no-mobile{
 	display: none;
-}
-
-.tabs.tabs-accordion{
-	@media (max-width: $mobile-phone){
-		.tabs-nav{
-			display: none;
-		}
-		
-		.tabs-cont{
-			.tab{
-				position: static;
-				left: 0;
-				top: 0;
-				opacity: 1;
-			}
-		}
-	}
 }
 
 .js-reveal{
