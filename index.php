@@ -145,6 +145,16 @@ if(elt.tab){
 						</span>
 						Si l'élément <strong>.tabs-cont</strong> de l'objet RegalTabs contient un élément avec un identifiant identique à l'ancre, l'onglet correspondant est ouvert. Cette action prend le dessus sur l'onglet ouvert par défaut via l'attribut <strong>data-active</strong>.
 					</p>
+					
+					<h2>Entrer les clicks dans l'historique du navigateur</h2>
+					<p>
+						En ajoutant un attribut <strong>data-history="1"</strong>, l'ancre est ajoutée à l'URL et l'affichage de l'onglet entre dans l'historique du navigateur.
+						<br>
+						<span class="code">
+&lt;div class="tabs vertical" data-active="0" <strong>data-history="1"</strong>>
+						</span><br>
+						
+					</p>
 					<a href="js/regal-tabs-vanilla.js" download>js/regal-tabs-vanilla.js</a>
 				</p>
 			</div>
@@ -152,7 +162,7 @@ if(elt.tab){
 			<section class="section tabs-demo">
 				<div class="section-inner">
 					<h2>Démo en mode vertical</h2>
-					<div class="tabs vertical" data-active="0"> <!-- class horizontal/vertical, data-active=indice onglet actif par défaut -->
+					<div class="tabs vertical" data-active="0" data-history="1"> <!-- class horizontal/vertical, data-active=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
 							<a href="#pages" class="tabs-nav-item" id="pages-nav">
 								<span>Onglet 1</span>

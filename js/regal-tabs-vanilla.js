@@ -1,3 +1,4 @@
+//regalTabs
 var RegalTabs = function(selector, options){
 	var plugin = this;
 	//console.log("RegalTabs init");
@@ -5,7 +6,7 @@ var RegalTabs = function(selector, options){
 	
 	var defaults = {
 		active: (plugin.el.getAttribute('data-active') && plugin.el.getAttribute('data-active') !== '') ? plugin.el.getAttribute('data-active') : 0 ,
-		start: (plugin.el.getAttribute('data-start') && plugin.el.getAttribute('data-start') !== '') ? plugin.el.getAttribute('data-start') : 0
+		activeHistory: (plugin.el.getAttribute('data-history') && plugin.el.getAttribute('data-history') !== '') ? parseInt(plugin.el.getAttribute('data-history')) : 0
 	};
 	if (typeof Object.assign != 'function') {
 	  Object.assign = function(target, varArgs) { // .length of function is 2
@@ -37,20 +38,35 @@ var RegalTabs = function(selector, options){
 	var activetab;
 	
 	//une ancre prend le dessus sur le js default
-	var reqId = window.document.location.hash.replace('#', '');
-	var reqEl = (reqId !== '') ? document.getElementById(reqId) : false;
-	if(reqEl){
-		//make sure reqEl is inside the RegalTabs
-		reqEl = elt.contains(document.getElementById(reqId)) ? document.getElementById(reqId) : false;
+	var reqId, reqEl;
+	function setReqEl(){
+		reqId = window.document.location.hash;
+		reqEl = (reqId !== '') ? document.querySelector(reqId) : false;
+		if(reqEl){
+			//make sure reqEl is inside the RegalTabs
+			reqEl = elt.contains(document.querySelector(reqId)) ? document.querySelector(reqId) : false;
+		}
 	}
+	setReqEl();
 	//open-close action
 	nav.forEach(function(el, index){
 		el.index = index;
 		el.addEventListener('click', openClose);
 	});
-	
+	var userClick = false;
 	function openClose(e){
 		e.preventDefault();
+		//history.pushState({page: e.currentTarget.textContent}, e.currentTarget.textContent, e.currentTarget.href);
+		if(plugin.o.activeHistory){
+			userClick = true;
+			var poy = window.pageYOffset;
+			window.document.location.hash = e.currentTarget.href.split('#')[1];
+			//avoid scroll to anchor
+			window.scrollTo(0, poy);         // execute it straight away
+			setTimeout(function() {
+				window.scrollTo(0, poy);     // run it a bit later also for browser compatibility
+			}, 1);
+		}
 		nav.forEach(function(elem, index){
 			if(index != e.currentTarget.index){
 				elem.classList.remove('active');
@@ -88,30 +104,33 @@ var RegalTabs = function(selector, options){
 	
 	//default-state
 	var defaultNav = nav[plugin.o.active];
-	//activetab = tab[plugin.o.active];
 	function defaultState(){
-		if(reqEl){ 
-			defaultNav = document.getElementById(reqId + '-nav');
+		if(reqEl){
+			defaultNav = document.querySelector(reqId + '-nav');
 		}
-		triggerEvent(defaultNav, 'click');
+		if(defaultNav){
+			triggerEvent(defaultNav, 'click');
+		}
 	};
 	defaultState();
 	
 	function windowLoad(){
 		setTimeout(function(){
-			//to make sure everything is loaded, especially images
-			defaultState();
+			//tresize when everything is loaded, especially images
+			//defaultState();
+			resize();
 		}, 500);
 	};
 	
-	function resize(){
-		var h = parseFloat(getComputedStyle(activetab, null).height);
+	function resize(ht){
+		var h = (ht) ? ht : Math.round(parseFloat(getComputedStyle(activetab, null).height));
 		tabsCont.style.minHeight = h + 'px';
 	};
 	
 	//public
-	plugin.resize = function(){
-		resize();
+	plugin.resize = function(ht){
+		var h = (ht) ? ht : null;
+		resize(h);
 	};
 	
 	plugin.destroy = function(){
@@ -137,6 +156,16 @@ var RegalTabs = function(selector, options){
 	});
 	window.addEventListener('load', windowLoad);
 	window.addEventListener('resizeEnd', resize);
+	
+	if(plugin.o.activeHistory){
+		window.onpopstate = function(e){
+			if(!userClick){
+				setReqEl();
+				defaultState();
+			}
+			userClick = false;
+		}
+	}
 	
 	return plugin;
 };
